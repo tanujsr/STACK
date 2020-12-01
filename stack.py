@@ -254,7 +254,7 @@ def stackcheck(expr):
         if areBracketsBalanced(expr):
             print("Balanced")
         else:
-            print("Not Balanced")"""
+            print("Not Balanced")
 
 def reverse(string):
     string = string[::-1]
@@ -265,7 +265,62 @@ string = input("enter a string\n")
 string = reverse(string)
 print("Reversed string is " + string)
 
-#more to come
+def printnge(arr):
+    for i in range(0,len(arr),1):
+
+        next = -1
+        for j in range(i+1,len(arr),1):
+            if arr[i] < arr[j]:
+                next = arr[j]
+                break
+        print(str(arr[i]) + "----" + str(next))
+
+arr = [11,54,67,89]
+printnge(arr)
+"""
+def createstack():
+    stack = []
+    return stack
+def isempty():
+    return len(stack) == 0
+def push(stack,x):
+    stack.append(x)
+def pop(stack):
+    if isempty():
+        print("stack overflow")
+    else:
+        return stack.pop()
+
+def printnge(arr):
+    s = createstack()
+    element = 0
+    next = 0
+    push(s,arr[0])
+
+    for i in range(1,len(arr),1):
+        next = arr[i]
+        if isempty(s) == False:
+            element = pop(s)
+
+            while element < next:
+                print(str(element)+"--"+str(next))
+            if isempty() == True:
+                break
+
+                element = pop(s)
+
+            if element > next:
+                push(s,element)
+                push(s,next)
+
+                while isempty() ==False:
+                    element = pop(s)
+                    next = -1
+                    print(str(element) + "--" + str(next))
+arr = [11,54,67,89]
+printnge(arr)
+
+
 
 
 
